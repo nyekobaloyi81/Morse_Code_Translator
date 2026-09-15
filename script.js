@@ -1,19 +1,26 @@
-var transBtn = document.getElementById("trans");
+const morseMap = {
+    a: ".-", b: "-...", c: "-.-.", d: "-..", e: ".", f: "..-.", g: "--.", h: "....",
+    i: "..", j: ".---", k: "-.-", l: ".-..", m: "--", n: "-.", o: "---", p: ".--.",
+    q: "--.-", r: ".-.", s: "...", t: "-", u: "..-", v: "...-", w: ".--", x: "-..-",
+    y: "-.--", z: "--..", 0: "-----", 1: ".----", 2: "..---", 3: "...--", 4: "....-",
+    5: ".....", 6: "-....", 7: "--...", 8: "---..", 9: "----.", ".": ".-.-.-", ",": "--..--",
+    "?": "..--..", "!": "-.-.--", "'": ".----.", "(": "-.--.", ")": "-.--.-", "&": ".-...",
+    ":": "---...", ";": "-.-.-.", "/": "-..-.", "=": "-...-", "+": ".-.-.", "-": "-....-",
+    '"': ".-..-.", "@": ".--.-."
+};
 
-var text = document.createElement("textarea");
-text.cols = "60";
-text.rows = "5";
-text.disabled = true;
+var input = document.getElementById("eng").value;
+var output = "";
+// input is no longer displaying?
+
 
 function Translate() {
-    var output = "";
-    var input = document.getElementById("eng").value.toLowerCase();
-    var sentence = input.split(" ")
-    
-    for (let i=0; i<sentence.length; i++) {
-        for (let j=0 ; j< sentence[i].length; j++){
-            output += checkLetter(sentence[i][j]);
-            output += checkNumber(sentence[i][j]);
+    console.log(input);
+
+    for (let i=0; i<input.length; i++) {
+        for (let j=0 ; j< input[i].length; j++){
+            output += checkLetter(input[i][j]);
+            output += checkNumber(input[i][j]);
 
             //There are 3 spaces between letters
 			output += "   ";
@@ -21,11 +28,11 @@ function Translate() {
         //There are 7 spaces between words
         output += "       ";
     }
+    
 
-    console.log(output);
     //outupt
-    text.value = output;
-    document.getElementById("form").appendChild(text);
+    console.log(output);
+    document.getElementById("morse-output").value = output;
 }
 
 function checkLetter(letter){
@@ -148,3 +155,5 @@ function checkNumber(letter){
         return "";
     }
 }
+
+document.getElementById("trans").addEventListener("click", Translate);

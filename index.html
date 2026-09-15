@@ -2,21 +2,23 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <title>Translator</title>
 </head>
 <body>
     <h1>Translate to Morse Code</h1>
 
     <div class="magicArea">
-        <form action="">
-            <textarea id="eng" cols="40" rows="5"></textarea>
-        </form>
+        <div class="input">
+            <textarea id="eng"></textarea>
+        </div>
         
-        <button type="button" class="button" id="trans" onclick="Translate()"> Translate </button>
+        <button type="button" class="button" id="trans"> Translate </button>
         <br><br>
         
-        <form action="" id="form"></form>    
+        <div class="output">
+            <textarea id="morse-output" readonly placeholder="Your translation will appear here..."></textarea>
+        </div>   
         
     </div>
     
