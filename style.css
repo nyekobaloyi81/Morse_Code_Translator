@@ -1,0 +1,47 @@
+:root {
+  --gradient: linear-gradient(135deg, #494949, rgb(148, 148, 148), #003c6d);
+  --grad: linear-gradient(90deg, #0084ff, rgb(0, 12, 187), #0099ff);
+  --grad2: linear-gradient(90deg, #a8a8a8, rgb(29, 146, 0), #00ff0d);
+}
+
+body {
+  justify-content: center;
+  align-items: center;
+  font-size: 1.125em;
+  line-height: 1.6;
+  color: white;
+  background: #ddd;
+  background-size: 300%;
+  background-image: var(--grad);
+  animation: bg-animation 40s infinite;
+}
+
+@keyframes bg-animation {
+  0% {background-position: left}
+  50% {background-position: right}
+  100% {background-position: left}
+}
+
+.magicArea{
+  float: left;
+  align-items: center;
+}
+
+
+.button {
+  font-size: 20px;
+  color: rgb(0, 70, 0);
+  border: 2px solid rgb(23, 139, 0);
+  border-radius: 7.5%;
+  cursor: pointer;
+  padding: 20px 40px;
+  background: var(--grad2);
+  background-size: 300%;
+  background-position: left;
+  transition: background-position 500ms;
+  margin-left: 15mm;
+  }
+
+  .button:hover {
+    background-position: right;
+  }
