@@ -22,9 +22,9 @@ body {
   100% {background-position: left}
 }
 
-.magicArea{
-  float: left;
-  align-items: center;
+.translator-grid{
+  display: flex;
+  gap: 50px;
 }
 
 

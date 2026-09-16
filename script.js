@@ -9,30 +9,24 @@ const morseMap = {
     '"': ".-..-.", "@": ".--.-."
 };
 
-var input = document.getElementById("eng").value;
-var output = "";
-// input is no longer displaying?
-
+//these are the elements not the values of the elements
+const input = document.getElementById("eng");
+const output = document.getElementById("morse-output");
 
 function Translate() {
-    console.log(input);
-
-    for (let i=0; i<input.length; i++) {
-        for (let j=0 ; j< input[i].length; j++){
-            output += checkLetter(input[i][j]);
-            output += checkNumber(input[i][j]);
-
-            //There are 3 spaces between letters
-			output += "   ";
+    var sentence = input.value.toLowerCase().trim().split(" ");
+    for (let i=0; i<sentence.length; i++) {
+        for (let j=0 ; j< sentence[i].length; j++){
+            output.value += checkLetter(sentence[i][j]);
+            output.value += checkNumber(sentence[i][j]);
         }
-        //There are 7 spaces between words
-        output += "       ";
+        //forwards slashes between words
+        if(i+1 < sentence.length){ //make sure you don't add a slash at the end of the sentence
+            console.log(i);
+            output.value += " / ";
+        }
+        
     }
-    
-
-    //outupt
-    console.log(output);
-    document.getElementById("morse-output").value = output;
 }
 
 function checkLetter(letter){
