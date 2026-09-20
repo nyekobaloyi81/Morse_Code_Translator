@@ -16,14 +16,18 @@
                 </a>
             </header>
 
-            <section class="hero" aria-labelledby="page-title">
+            <section class="hero">
                <h1 id="page-title">Give your words <br> <em>a signal.</em> </h1>
             </section>
 
             <section class="translator-grid">
                 <!-- Input Box -->
                 <div class="panel input-panel">
-                    <textarea id="eng" maxlength="500" placeholder="Type something worth decoding..."></textarea>
+                    <div class="panel-heading">
+                        <label for="eng"> Your message </label>
+                        <span id="char-count"> 0 / 500 </span>
+                    </div>
+                    <textarea id="eng" maxlength="500" placeholder="Type something worth decoding..." spellcheck="true"></textarea>
                 </div>
                 
                 <!-- Translate button -->
@@ -34,6 +38,9 @@
                 
                 <!-- Output Box -->
                 <div class="panel output-panel">
+                    <div class="panel-heading">
+                        <label for="morse-output">Morse output</label>
+                    </div>
                     <textarea id="morse-output" readonly placeholder="Your translation will appear here..."></textarea>
                 </div>   
             </section>
