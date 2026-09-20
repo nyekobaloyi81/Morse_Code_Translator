@@ -7,24 +7,40 @@
 </head>
 <body>
     <div id="container" class="container"></div>
-        <main>
-            <h1>Translate to Morse Code</h1>
+        <main class="page-shell">
+            <header class="site-header">
+                <a class="brand" href="index.html">
+                    <span></span>
+                    <span class="brand-mark">  ·− </span>
+                    <span>MORSE-CODE<span class="brand-slash">/</span>TRANSLATOR</span>
+                </a>
+            </header>
+
+            <section class="hero" aria-labelledby="page-title">
+               <h1 id="page-title">Give your words <br> <em>a signal.</em> </h1>
+            </section>
 
             <section class="translator-grid">
                 <!-- Input Box -->
-                <div class="input">
+                <div class="panel input-panel">
                     <textarea id="eng" maxlength="500" placeholder="Type something worth decoding..."></textarea>
                 </div>
                 
                 <!-- Translate button -->
-                <button type="button" class="trans-button" id="trans"> Translate </button>
-                <br><br>
+                <div class="action-column">
+                    <button type="button" class="trans-button" id="trans"> Translate </button>
+                </div>
+                
                 
                 <!-- Output Box -->
-                <div class="output">
+                <div class="panel output-panel">
                     <textarea id="morse-output" readonly placeholder="Your translation will appear here..."></textarea>
                 </div>   
             </section>
+
+            <footer class="page-footer">
+                <span>SEPARATE LETTERS WITH SPACES <b>·</b> WORDS WITH /</span>
+            </footer>
         </main>
         
 </body>
