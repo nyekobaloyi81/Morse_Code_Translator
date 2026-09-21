@@ -28,6 +28,10 @@
                         <span id="char-count"> 0 / 500 </span>
                     </div>
                     <textarea id="eng" maxlength="500" placeholder="Type something worth decoding..." spellcheck="true"></textarea>
+                    <div class="panel-footer">
+                        <span class="input-hint">Letters, numbers &amp; common punctuation</span>
+                        <button type="button" class="clear-button" id="clear-btn">Clear</button>
+                    </div>
                 </div>
                 
                 <!-- Translate button -->
@@ -42,6 +46,10 @@
                         <label for="morse-output">Morse output</label>
                     </div>
                     <textarea id="morse-output" readonly placeholder="Your translation will appear here..."></textarea>
+                    <div class="panel-footer output-footer">
+                        <span id="output-status">Waiting for input</span>
+                        <button type="button" class="copy-button" id="copy-btn"> Copy </button>
+                    </div>
                 </div>   
             </section>
 

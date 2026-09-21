@@ -12,6 +12,8 @@ const morseMap = {
 //these are the elements not the values of the elements
 const input = document.getElementById("eng");
 const output = document.getElementById("morse-output");
+const charCount = document.getElementById("char-count");
+const outputStatus = document.getElementById("output-status");
 
 function Translate() {
     const sentence = input.value.toLowerCase().trim().split(" ");
@@ -22,4 +24,22 @@ function Translate() {
             .join(" / "); //add forward slash between words
 }
 
+function updateCount() {
+    charCount.textContent = `${input.value.length} / 500`;
+}
+
 document.getElementById("trans").addEventListener("click", Translate);
+document.getElementById("clear-btn").addEventListener("click", () => {
+    input.value = "";
+    output.value = "";
+    outputStatus.textContent = "Waiting for input";
+    updateCount();
+    input.focus();
+});
+document.getElementById("copy-btn").addEventListener("click", async () => {
+    if (!output.value) return;
+    await navigator.clipboard.writeText(output.value);
+    outputStatus.textContent = "Copied to clipboard";
+});
+
+input.addEventListener("input", updateCount);
