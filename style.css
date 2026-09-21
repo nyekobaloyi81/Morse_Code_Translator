@@ -92,7 +92,12 @@ h1 em {
   display: grid;
   grid-template-columns: 1fr 132px 1fr;
   align-items: center;
-  gap: 50px;
+  gap: 20px;
+}
+
+.action-column {
+  display: flex;
+  justify-content: center;
 }
 
 textarea {
@@ -112,7 +117,8 @@ textarea::placeholder {
   color: #a4afaa;
 }
 
-.panel-heading,
+.panel-heading, 
+.panel-footer,
 .page-footer {
   font-family: "DM Mono", monospace;
   font-size: 11px;
@@ -120,16 +126,19 @@ textarea::placeholder {
   text-transform: uppercase;
 }
 
-.panel-heading {
+.panel-heading, 
+.panel-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
 }
 
-.panel-heading span{
+.panel-heading span, 
+.panel-footer{
   color: #687674;
 }
+
 .panel {
   min-width: 0;
   padding: 22px;
@@ -146,8 +155,9 @@ textarea::placeholder {
   font-weight: 500;
 }
 
-.trans-button {
-  background: green;
+.clear-button, 
+.trans-button, 
+.copy-button {
   font: 600 12px "Space Grotesk", sans-serif;
   padding: 15px 15px;
   border: 1px solid;
@@ -156,9 +166,26 @@ textarea::placeholder {
   transition: transform .2s, box-shadow .2s;
 }
 
+.trans-button{
+  background: green;
+}
+
+.clear-button{
+  background: palegoldenrod;
+}
+
+.copy-button{
+  background: rgba(93, 217, 255, 0.25);
+}
+
 .trans-button:hover {
   transform: translate(-3px, -3px);
   box-shadow: 4px 4px 0 whitesmoke;
+}
+
+.copy-button:hover, .clear-button:hover{
+  transform: translate(-3px, -3px);
+  box-shadow: 4px 4px 0 black;
 }
 
 
