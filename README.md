@@ -1,5 +1,10 @@
-````md
+
 # Morse Code Translator
+
+https://nyekobaloyi81.github.io/Morse_Code_Translator/
+
+<img width="520" height="415" alt="Morse Code Translator Page" src="https://github.com/user-attachments/assets/f9ea7f33-1da8-46a1-a2d0-3f82d6f9baaa" />
+
 
 A lightweight front-end web application that converts plain English text into Morse code and displays the translated result in a clean, modern interface. The project is built using HTML, CSS, & JavaScript and requires no backend or package installation.
 
